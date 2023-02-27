@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Click Counter</title>
+    <style>
+      /* Gradient backgrounds */
+      body {
+        background-color: #fdfdfd;
+        background-image: linear-gradient(45deg, #ff8a00, #e52e71);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      
+      .container {
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.3);
+        border-radius: 16px;
+        padding: 32px;
+        margin: 32px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 500px;
+      }
+      
+      /* Button styles */
+      button {
+        margin: 32px auto;
+        padding: 16px 32px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        background-color: #ff8a00;
+        background-image: linear-gradient(45deg, #ff8a00, #e52e71);
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-image: linear-gradient(45deg, #e52e71, #ff8a00);
+      }
+      
+      /* Counter styles */
+      #counter {
+        font-size: 96px;
+        font-weight: bold;
+        margin-top: 64px;
+        text-align: center;
+        color: white;
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-image: radial-gradient(circle at center, #e52e71, #ff8a00);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Title styles */
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 32px;
+        text-align: center;
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Animated pulse effect */
+      #counter:after {
+        content: '';
+        display: block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: pulse 1s infinite;
+        opacity: 0;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        50% {
+          opacity:  1;
+        }
+        100% {
+          transform: scale(1.2);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head
+
+  <body>
+    <div class="container">
+      <h1>Click Counter</h1>
+      <button onclick="incrementCounter()">Click me</button>
+      <div id="counter">0</div>
+    </div>
+    
+    <script>
+      var counter = 0;
+      
+      function incrementCounter() {
+        counter++;
+        document.getElementById("counter").innerHTML = counter;
+      }
+    </script>
+  </body>
+</html>
